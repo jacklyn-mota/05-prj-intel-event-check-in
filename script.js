@@ -88,6 +88,17 @@ function updateDisplay() {
   if (totalCount >= maxGoal) {
     showCelebration();
   }
+
+    function showCelebration() {
+    let winningTeam = getWinningTeam();
+  
+    celebrationMessage.textContent =
+      "🎉 Goal reached! Winning team: " + winningTeam + "!";
+    celebrationMessage.style.display = "block";
+    
+    // Add confetti!
+    confetti();
+  }
 }
 
 function showGreeting(name, team) {
