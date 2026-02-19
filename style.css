@@ -216,6 +216,25 @@ button .fas {
   font-size: 17px;
 }
 
+/* Attendee list */
+.attendee-list {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.attendee-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.attendee-list li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
 /* Progress container - simplified */
 .progress-container {
   width: 100%;
@@ -264,6 +283,15 @@ button .fas {
   font-size: 24px;
   font-weight: 700;
   margin: 0 2px;
+}
+
+/* Celebration message */
+.celebration {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #16a34a;
+  display: none;
 }
 
 /* Footer */
