@@ -4,11 +4,17 @@
 let maxGoal = 50;
 
 //Load saved data OR start at 0
-let totalCount = localStorage.getItem("totalCount") ? parseInt(localStorage.getItem("totalCount")) : 0;
+let totalCount = localStorage.getItem("totalCount")
+  ? parseInt(localStorage.getItem("totalCount"))
+  : 0;
 
-let teamCounts = localStorage.getItem("teamCounts") ? JSON.parse(localStorage.getItem("teamCounts")) : {water: 0, zero: 0, power: 0};
+let teamCounts = localStorage.getItem("teamCounts")
+  ? JSON.parse(localStorage.getItem("teamCounts"))
+  : { water: 0, zero: 0, power: 0 };
 
-let attendees = localStorage.getItem("attendees") ? JSON.parse(localStorage.getItem("attendees")) : [];
+let attendees = localStorage.getItem("attendees")
+  ? JSON.parse(localStorage.getItem("attendees"))
+  : [];
 
 // ===== GET ELEMENTS =====
 
@@ -26,7 +32,6 @@ const powerDisplay = document.getElementById("powerCount");
 const progressBar = document.getElementById("progressBar");
 const celebrationMessage = document.getElementById("celebrationMessage");
 const attendeeList = document.getElementById("attendeeList");
-
 
 // ===== INITIAL PAGE LOAD UPDATE =====
 
@@ -89,13 +94,13 @@ function updateDisplay() {
     showCelebration();
   }
 
-    function showCelebration() {
+  function showCelebration() {
     let winningTeam = getWinningTeam();
-  
+
     celebrationMessage.textContent =
       "🎉 Goal reached! Winning team: " + winningTeam + "!";
     celebrationMessage.style.display = "block";
-    
+
     // Add confetti!
     confetti();
   }
@@ -104,8 +109,7 @@ function updateDisplay() {
 function showGreeting(name, team) {
   let teamName = getTeamFullName(team);
 
-  greeting.textContent =
-    "Welcome " + name + "!  You joined " + teamName + "!";
+  greeting.textContent = "Welcome " + name + "!  You joined " + teamName + "!";
   greeting.classList.add("success-message");
   greeting.style.display = "block";
 }
@@ -121,8 +125,7 @@ function renderAttendees() {
 
   attendees.forEach(function (person) {
     let li = document.createElement("li");
-    li.textContent =
-      person.name + " - " + getTeamFullName(person.team);
+    li.textContent = person.name + " - " + getTeamFullName(person.team);
     attendeeList.appendChild(li);
   });
 }
@@ -133,6 +136,8 @@ function showCelebration() {
   celebrationMessage.textContent =
     "🎉 Goal reached! Winning team: " + winningTeam + "!";
   celebrationMessage.style.display = "block";
+
+  confetti();
 }
 
 function getWinningTeam() {
